@@ -1,16 +1,16 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "logicAppName": {
-            "defaultValue": "dev-la-optum-sendemail",
-            "type": "String"
-        },
-        "office365Connection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/office365",
-            "type": "String"
-        }
+  "parameters": {
+    "logicAppName": {
+      "defaultValue": "dev-la-optum-sendemail",
+      "type": "String"
     },
+    "office365Connection": {
+      "defaultValue": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365",
+      "type": "String"
+    }
+  },
     "variables": {},
     "resources": [
         {
@@ -105,11 +105,11 @@
                 "parameters": {
                     "$connections": {
                         "value": {
-                            "office365": {
-                                "connectionId": "[parameters('office365Connection')]",
-                                "connectionName": "office365",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/office365"
-                            }
+                          "office365": {
+                            "connectionId": "[parameters('office365Connection')]",
+                            "connectionName": "office365",
+                            "id": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/providers/Microsoft.Web/locations/centralus/managedApis/office365"
+                          }
                         }
                     }
                 }
