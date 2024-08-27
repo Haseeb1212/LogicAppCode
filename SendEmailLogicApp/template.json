@@ -1,25 +1,25 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-  "parameters": {
-    "logicAppName": {
-      "defaultValue": "send-email",
-      "type": "String"
+    "parameters": {
+        "workflows_deploy_logicapp_poc_name": {
+            "defaultValue": "deploy-logicapp-poc",
+            "type": "String"
+        },
+        "connections_office365_externalid": {
+            "defaultValue": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365",
+            "type": "String"
+        }
     },
-    "office365": {
-      "defaultValue": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365",
-      "type": "String"
-    }
-  },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
-            "name": "[parameters('logicAppName')]",
+            "name": "[parameters('workflows_deploy_logicapp_poc_name')]",
             "location": "eastus",
             "properties": {
-                "state": "Disabled",
+                "state": "Enabled",
                 "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
                     "contentVersion": "1.0.0.0",
@@ -27,41 +27,31 @@
                         "$connections": {
                             "defaultValue": {},
                             "type": "Object"
-                        },
-                        "EmailTo": {
-                            "defaultValue": "haseeb.ahmed@mazikglobal.com",
-                            "type": "String"
                         }
                     },
                     "triggers": {
-                        "manual": {
-                            "type": "Request",
-                            "kind": "Http",
-                            "inputs": {
-                                "schema": {
-                                    "properties": {
-                                        "Body": {
-                                            "type": "string"
-                                        },
-                                        "Subject": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
+                        "Recurrence": {
+                            "recurrence": {
+                                "frequency": "Day",
+                                "interval": 3
+                            },
+                            "evaluatedRecurrence": {
+                                "frequency": "Day",
+                                "interval": 3
+                            },
+                            "type": "Recurrence"
                         }
                     },
                     "actions": {
-                        "Send_an_email": {
+                        "Send_an_email_(V2)": {
                             "runAfter": {},
                             "type": "ApiConnection",
                             "inputs": {
                                 "body": {
-                                    "Body": "<p>@{triggerBody()?['Body']}</p>",
+                                    "Body": "<p>demo-Logic-app run</p>",
                                     "Importance": "Normal",
-                                    "Subject": "@triggerBody()?['Subject']",
-                                    "To": "@parameters('EmailTo')"
+                                    "Subject": "demo-Logic-app run",
+                                    "To": "kamran.masood@mazikglobal.com"
                                 },
                                 "host": {
                                     "connection": {
@@ -71,33 +61,6 @@
                                 "method": "post",
                                 "path": "/v2/Mail"
                             }
-                        },
-                        "Send_email_failed": {
-                            "runAfter": {
-                                "Send_an_email": [
-                                    "Failed",
-                                    "TimedOut"
-                                ]
-                            },
-                            "type": "Response",
-                            "kind": "Http",
-                            "inputs": {
-                                "body": "@body('Send_an_email')",
-                                "statusCode": 400
-                            }
-                        },
-                        "Send_email_success": {
-                            "runAfter": {
-                                "Send_an_email": [
-                                    "Succeeded"
-                                ]
-                            },
-                            "type": "Response",
-                            "kind": "Http",
-                            "inputs": {
-                                "body": "Email Sent!.",
-                                "statusCode": 200
-                            }
                         }
                     },
                     "outputs": {}
@@ -105,11 +68,11 @@
                 "parameters": {
                     "$connections": {
                         "value": {
-                          "office365": {
-                            "connectionId": "[parameters('office365')]",
-                            "connectionName": "office365",
-                            "id": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/providers/Microsoft.Web/locations/eastus/managedApis/office365"
-                          }
+                            "office365": {
+                                "connectionId": "[parameters('connections_office365_externalid')]",
+                                "connectionName": "office365",
+                                "id": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/providers/Microsoft.Web/locations/eastus/managedApis/office365"
+                            }
                         }
                     }
                 }
