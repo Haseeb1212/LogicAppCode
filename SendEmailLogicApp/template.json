@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "defaultValue": "dev-la-optum-sendemail",
+      "defaultValue": "send-email",
       "type": "String"
     },
-    "office365Connection": {
+    "office365": {
       "defaultValue": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365",
       "type": "String"
     }
@@ -29,7 +29,7 @@
                             "type": "Object"
                         },
                         "EmailTo": {
-                            "defaultValue": "ryan_campbell@optum.com",
+                            "defaultValue": "haseeb.ahmed@mazikglobal.com",
                             "type": "String"
                         }
                     },
@@ -106,9 +106,9 @@
                     "$connections": {
                         "value": {
                           "office365": {
-                            "connectionId": "[parameters('office365Connection')]",
+                            "connectionId": "[parameters('office365')]",
                             "connectionName": "office365",
-                            "id": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/providers/Microsoft.Web/locations/centralus/managedApis/office365"
+                            "id": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/providers/Microsoft.Web/locations/eastus/managedApis/office365"
                           }
                         }
                     }
