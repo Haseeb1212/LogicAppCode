@@ -19,6 +19,6 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-        template: 'SendEmailLogicApp/template.json'
-        parameters: 'SendEmailLogicApp/parameters.json'
+        resourceGroupName: 'DynamicsDeployments-eastus'
+        template: './SendEmailLogicApp/template.json'
+        parameters: './SendEmailLogicApp/parameters.json'
