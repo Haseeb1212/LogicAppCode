@@ -1,0 +1,24 @@
+name: Deploy Logic App
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+ 
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.CLIENTID }}
+ 
+    - name: 'Deploy ARM template'
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+        template: './SendEmailLogicApp/template.json'
+        parameters: './SendEmailLogicApp/parameters.json'
