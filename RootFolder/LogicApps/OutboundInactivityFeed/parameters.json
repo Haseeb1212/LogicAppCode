@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": "dev-la-optum-outbound-inactivityfeed-haseeb"
+      "value": "dev-la-optum-outbound-inactivityfeed-con"
     },
     "dynamicsAxConnectionId": {
       "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/dynamicsax"
