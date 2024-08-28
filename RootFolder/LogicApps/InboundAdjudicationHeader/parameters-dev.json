@@ -25,6 +25,27 @@
     },
     "sftpWithSshConnection": {
       "value": null
+    },
+    "azuremonitorlogsConnectionName": {
+      "value": "azuremonitorlogs"
+    },
+    "azurefileConnectionName": {
+      "value": "azurefile"
+    },
+    "dynamicsaxConnectionName": {
+      "value": "dynamicsax"
+    },
+    "office365ConnectionName": {
+      "value": "office365"
+    },
+    "sftpwithsshConnectionName": {
+      "value": "sftpwithssh-adjudication"
+    },
+    "sftpwithssh_1ConnectionName": {
+      "value": "sftpwithssh-1"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
     }
   }
 }
