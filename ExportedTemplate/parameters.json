@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "connections_office365_name": {
-            "value": "office365-8"
+            "value": "office365-haseeb"
         }
     }
 }
