@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "azureFileConnectionName": {
-      "value": "azurefile"
+      "value": "azurefile-haseeb"
     },
     "resourceGroup": {
       "value": "DynamicsDeployments-eastus"
