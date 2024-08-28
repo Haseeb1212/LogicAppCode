@@ -3,28 +3,59 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": null
+      "value": "dev-la-optum-inbound-adjudicationlines"
     },
     "createPackageZipFileFunctionAppExternalId": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/sites',parameters('functionAppName'))]"
     },
     "azureFileConnection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azurefile')"
+
     },
     "azureMonitorLogsConnection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azuremonitorlogs'))]"
+
     },
     "dynamics365Connection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('dynamicsax'))]"
     },
     "office365Connection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('office365'))]"
     },
     "sftpWithSshAdjudicationExternalIdConnection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithssh-adjudication'))]"
+
     },
     "sftpWithSshConnection": {
-      "value": null
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithssh-1'))]"
+
+    },
+    "azuremonitorlogsConnectionName": {
+      "value": "azuremonitorlogs"
+    },
+    "azurefileConnectionName": {
+      "value": "azurefile"
+    },
+    "dynamicsaxConnectionName": {
+      "value": "dynamicsax"
+    },
+    "office365ConnectionName": {
+      "value": "office365"
+    },
+    "sftpwithsshConnectionName": {
+      "value": "sftpwithssh-adjudication"
+    },
+    "sftpwithssh_1ConnectionName": {
+      "value": "sftpwithssh-1"
+    },
+    "functionAppName": {
+      "value": "dev-fa-optum-createpackagezipfile"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
+    },
+    "resourceGroupName": {
+      "value": "DynamicsDeployments-eastus"
     }
   }
-}
+  }
