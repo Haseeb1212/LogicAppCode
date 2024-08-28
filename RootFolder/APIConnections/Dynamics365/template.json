@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "dynamicsAXConnectionName": {
+        "defaultValue": "",
+        "type": "String"
+      },
+      "subscriptionId": {
+        "defaultValue": "",
+        "type": "String"
+      }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('dynamicsAXConnectionName')]",
+            "location": "centralus",
+            "kind": "V1",
+            "properties": {
+                "displayName": "admin_rcm@optum.com",
+                "statuses": [
+                    {
+                        "status": "Connected"
+                    }
+                ],
+                "customParameterValues": {},
+                "nonSecretParameterValues": {
+                    "token:grantType": "code"
+                },
+                "createdTime": "2023-09-06T12:49:16.0262009Z",
+                "changedTime": "2023-10-20T14:52:34.1503831Z",
+              "api": {
+                "name": "[parameters('dynamicsAXConnectionName')]",
+                "displayName": "Fin & Ops Apps (Dynamics 365)",
+                "description": "Fin & Ops Apps (Dynamics 365) connector provides access to data entities.",
+                "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3454/', parameters('dynamicsAXConnectionName'), '/icon.png')]",
+                "brandColor": "#4A356F",
+                "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax')]",
+                "type": "Microsoft.Web/locations/managedApis"
+              },
+                "testLinks": []
+            }
+        }
+    ]
+}
