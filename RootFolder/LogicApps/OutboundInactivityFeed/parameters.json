@@ -3,16 +3,34 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": null
+      "value": "dev-la-optum-outbound-inactivityfeed-haseeb"
     },
-    "dynamics365Connection": {
-      "value": null
+    "dynamicsAxConnectionId": {
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/dynamicsax"
     },
-    "office365Connection": {
-      "value": null
+    "office365ConnectionId": {
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365-dev"
     },
-    "sftpWithSshConnection": {
-      "value": null
+    "sftpWithSshConnectionId": {
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/sftpwithssh-1"
+    },
+    "dynamicsaxConnectionName": {
+      "value": "dynamicsax"
+    },
+    "office365ConnectionName": {
+      "value": "office365"
+    },
+    "sftpwithsshConnectionName": {
+      "value": "sftpwithssh"
+    },
+    "resourceGroupName": {
+      "value": "DynamicsDeployments-eastus"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
+    },
+    "D365FOURL": {
+      "value": "optum-perf.sandbox.operations.dynamics.com"
     }
   }
 }
