@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/LogicApps/InboundAdjudicationHeader/template.json'
-        parameters: './RootFolder/LogicApps/InboundAdjudicationHeader/parameters-dev.json'
+        template: './RootFolder/APIConnections/SFTPWithSSH/template.json'
+        parameters: './RootFolder/APIConnections/SFTPWithSSH/parameters.json'
