@@ -808,53 +808,56 @@
                     },
                     "outputs": {}
                 },
-                "parameters": {
-                    "$connections": {
-                        "value": {
-                          "dynamicsax": {
-                            "connectionId": "[parameters('dynamicsAxConnectionId')]",
-                            "connectionName": "[parameters('dynamicsaxConnectionName')]",
-                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax')]"
+              "parameters": {
+                "$connections": {
+                  "value": {
+                    "dynamicsax": {
+                      "connectionId": "[parameters('dynamicsAxConnectionId')]",
+                      "connectionName": "[parameters('dynamicsaxConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax')]"
 
-                          },
-                          "office365": {
-                            "connectionId": "[parameters('office365ConnectionId')]",
-                            "connectionName": "[parameters('office365ConnectionName')]",
-                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
+                    },
+                    "office365": {
+                      "connectionId": "[parameters('office365ConnectionId')]",
+                      "connectionName": "[parameters('office365ConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
 
-                          },
-                          "sftpwithssh": {
-                            "connectionId": "[parameters('sftpWithSshConnectionId')]",
-                            "connectionName": "[parameters('sftpwithsshConnectionName')]",
-                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh')]"
-                          }
-                        }
                     },
-                    "D365FODMFDefinitionGroupId": {
-                        "value": "OutboundInactivityFeed"
-                    },
-                    "D365FOLegalEntity": {
-                        "value": "OIS"
-                    },
-                    "EntityName": {
-                        "value": "Outbound Inactivity Feed"
-                    },
-                    "FileName": {
-                        "value": "352863_4_20_rcminactivityfeed"
-                    },
-                    "LogicAppState": {
-                        "value": "Disabled"
-                    },
-                    "RecurrenceInterval": {
-                        "value": 1
-                    },
-                    "RecurrenceTimeZone": {
-                        "value": "GMT Standard Time"
-                    },
-                    "SFTPExportPath": {
-                        "value": "/Dynamics_365/to_Secure_Inactivityfeed"
+                    "sftpwithssh": {
+                      "connectionId": "[parameters('sftpWithSshConnectionId')]",
+                      "connectionName": "[parameters('sftpwithsshConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh')]"
                     }
+                  }
+                },
+                "D365FODMFDefinitionGroupId": {
+                  "value": "OutboundInactivityFeed"
+                },
+                "D365FOLegalEntity": {
+                  "value": "OIS"
+                },
+                "EntityName": {
+                  "value": "Outbound Inactivity Feed"
+                },
+                "FileName": {
+                  "value": "352863_4_20_rcminactivityfeed"
+                },
+                "LogicAppState": {
+                  "value": "Disabled"
+                },
+                "RecurrenceInterval": {
+                  "value": 1
+                },
+                "RecurrenceTimeZone": {
+                  "value": "GMT Standard Time"
+                },
+                "SFTPExportPath": {
+                  "value": "/Dynamics_365/to_Secure_Inactivityfeed"
+                },
+                "D365FOURL": {
+                  "value": "[parameters('D365FOURL')]"
                 }
+              }
             }
         }
     ]
