@@ -6,28 +6,28 @@
       "value": "dev-la-optum-inbound-adjudicationlines"
     },
     "createPackageZipFileFunctionAppExternalId": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/sites',parameters('functionAppName'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/sites/',parameters('functionAppName'))]"
     },
     "azureFileConnection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azurefile')"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azurefileConnectionName')"
 
     },
     "azureMonitorLogsConnection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azuremonitorlogs'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('azuremonitorlogsConnectionName'))]"
 
     },
     "dynamics365Connection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('dynamicsax'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('dynamicsaxConnectionName'))]"
     },
     "office365Connection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('office365'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('office365ConnectionName'))]"
     },
     "sftpWithSshAdjudicationExternalIdConnection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithssh-adjudication'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithsshConnectionName'))]"
 
     },
     "sftpWithSshConnection": {
-      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithssh-1'))]"
+      "value": "[concat('/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Web/connections/',parameters('sftpwithssh_1ConnectionName'))]"
 
     },
     "azuremonitorlogsConnectionName": {
@@ -58,4 +58,4 @@
       "value": "DynamicsDeployments-eastus"
     }
   }
-  }
+ }
