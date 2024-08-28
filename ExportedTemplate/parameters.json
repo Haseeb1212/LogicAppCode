@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "connections_office365_name": {
-            "value": "office-dev"
+            "value": "office365-8"
         }
     }
 }
