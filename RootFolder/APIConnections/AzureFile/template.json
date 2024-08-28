@@ -38,7 +38,7 @@
           "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to File Storage to perform various operations such as create, update, get and delete on files in your Azure Storage account.",
           "iconUri": "[concat('https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3403/', parameters('azureFileConnectionName'), '/icon.png')]",
           "brandColor": "#804998",
-          "id": "[concat('subscription().id/providers/Microsoft.Web/locations/centralus/managedApis/', 'azurefile')]",
+          "id": "[concat('/subscriptions/',subscription().id,'/providers/Microsoft.Web/locations/centralus/managedApis/azurefile')]",
           "type": "Microsoft.Web/locations/managedApis"
         },
         "testLinks": [
