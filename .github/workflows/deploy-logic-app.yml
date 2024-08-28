@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/LogicApps/InboundAdjudicationHeader/template.json'
-        parameters: './RootFolder/LogicApps/InboundAdjudicationHeader/parameters-dev.json'
+        template: './RootFolder/LogicApps/InboundUHC/template.json'
+        parameters: './RootFolder/LogicApps/InboundUHC/parameters.json'
