@@ -3,7 +3,6 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "connections_office365_name": {
-            "defaultValue": "office365",
             "type": "String"
         }
     },
