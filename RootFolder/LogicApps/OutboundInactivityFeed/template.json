@@ -37,6 +37,10 @@
     "subscriptionId": {
       "defaultValue": "",
       "type": "String"
+    },
+    "D365FOURL": {
+      "defaultValue": "",
+      "type": "String"
     }
   },
     "variables": {},
