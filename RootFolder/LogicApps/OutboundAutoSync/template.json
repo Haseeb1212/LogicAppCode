@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "defaultValue": "dev-la-optum-outbound-autosync",
+      "defaultValue": "dev-la-optum-outbound-autosync-con",
       "type": "String"
     },
     "dynamicsAxConnectionId": {
@@ -810,17 +810,18 @@
                           "dynamicsax": {
                             "connectionId": "[parameters('dynamicsAxConnectionId')]",
                             "connectionName": "[parameters('dynamicsaxConnectionName')]",
-                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax"
+                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax')]"
+
                           },
                           "office365": {
                             "connectionId": "[parameters('office365ConnectionId')]",
                             "connectionName": "[parameters('office365ConnectionName')]",
-                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/office365"
+                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
                           },
                           "sftpwithssh": {
                             "connectionId": "[parameters('sftpWithSshConnectionId')]",
                             "connectionName": "[parameters('sftpwithsshConnectionName')]",
-                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh"
+                            "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh')]"
                           }
                         }
                     },
