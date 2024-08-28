@@ -1,40 +1,68 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "logicAppName": {
-            "defaultValue": "dev-la-optum-inbound-adjudicationheader",
-            "type": "String"
-        },
-        "createPackageZipFileFunctionAppExternalId": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/sites/dev-fa-optum-createpackagezipfile",
-            "type": "String"
-        },
-        "azureFileConnection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/azurefile",
-            "type": "String"
-        },
-        "azureMonitorLogsConnection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/azuremonitorlogs",
-            "type": "String"
-        },
-        "dynamics365Connection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/dynamicsax",
-            "type": "String"
-        },
-        "office365Connection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/office365",
-            "type": "String"
-        },
-        "sftpWithSshAdjudicationExternalIdConnection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/sftpwithssh-adjudication",
-            "type": "String"
-        },
-        "sftpWithSshConnection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/sftpwithssh-1",
-            "type": "String"
-        }
+  "parameters": {
+    "logicAppName": {
+      "defaultValue": "dev-la-optum-inbound-adjudicationheader",
+      "type": "String"
     },
+    "createPackageZipFileFunctionAppExternalId": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/sites/dev-fa-optum-createpackagezipfile",
+      "type": "String"
+    },
+    "azureFileConnection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/azurefile",
+      "type": "String"
+    },
+    "azureMonitorLogsConnection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/azuremonitorlogs",
+      "type": "String"
+    },
+    "dynamics365Connection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/dynamicsax",
+      "type": "String"
+    },
+    "office365Connection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/office365",
+      "type": "String"
+    },
+    "sftpWithSshAdjudicationExternalIdConnection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/sftpwithssh-adjudication",
+      "type": "String"
+    },
+    "sftpWithSshConnection": {
+      "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/sftpwithssh-1",
+      "type": "String"
+    },
+    "azuremonitorlogsConnectionName": {
+      "defaultValue": "azuremonitorlogs",
+      "type": "String"
+    },
+    "azurefileConnectionName": {
+      "defaultValue": "azurefile",
+      "type": "String"
+    },
+    "dynamicsaxConnectionName": {
+      "defaultValue": "dynamicsax",
+      "type": "String"
+    },
+    "office365ConnectionName": {
+      "defaultValue": "office365",
+      "type": "String"
+    },
+    "sftpwithsshConnectionName": {
+      "defaultValue": "sftpwithssh-adjudication",
+      "type": "String"
+    },
+    "sftpwithssh_1ConnectionName": {
+      "defaultValue": "sftpwithssh-1",
+      "type": "String"
+    },
+    "subscriptionId": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
     "variables": {},
     "resources": [
         {
@@ -1350,99 +1378,121 @@
                     },
                     "outputs": {}
                 },
-                "parameters": {
-                    "$connections": {
-                        "value": {
-                            "azurefile": {
-                                "connectionId": "[parameters('azureFileConnection')]",
-                                "connectionName": "azurefile",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/azurefile"
-                            },
-                            "azuremonitorlogs": {
-                                "connectionId": "[parameters('azureMonitorLogsConnection')]",
-                                "connectionName": "azuremonitorlogs",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs"
-                            },
-                            "dynamicsax": {
-                                "connectionId": "[parameters('dynamics365Connection')]",
-                                "connectionName": "dynamicsax",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax"
-                            },
-                            "office365": {
-                                "connectionId": "[parameters('office365Connection')]",
-                                "connectionName": "office365",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/office365"
-                            },
-                            "sftpwithssh": {
-                                "connectionId": "[parameters('sftpWithSshAdjudicationExternalIdConnection')]",
-                                "connectionName": "sftpwithssh-adjudication",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh"
-                            },
-                            "sftpwithssh_1": {
-                                "connectionId": "[parameters('sftpWithSshConnection')]",
-                                "connectionName": "sftpwithssh-1",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh"
-                            }
-                        }
+              "parameters": {
+                "$connections": {
+                  "value": {
+                    "azurefile": {
+                      "connectionId": "[parameters('azureFileConnection')]",
+                      "connectionName": "[parameters('azurefileConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azurefile')]"
                     },
-                    "D365FODMFDefinitionGroupId": {
-                        "value": "AdjudicationHeaderImport"
+                    "azuremonitorlogs": {
+                      "connectionId": "[parameters('azureMonitorLogsConnection')]",
+                      "connectionName": "[parameters('azuremonitorlogsConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs')]"
                     },
-                    "D365FOLegalEntity": {
-                        "value": "OIS"
+                    "dynamicsax": {
+                      "connectionId": "[parameters('dynamics365Connection')]",
+                      "connectionName": "[parameters('dynamicsaxConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax')]"
                     },
-                    "FolderExportPath": {
-                        "value": "/optumintegrationfilestorage/Archive_AdjudicationHeader/"
+                    "office365": {
+                      "connectionId": "[parameters('office365Connection')]",
+                      "connectionName": "[parameters('office365ConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
                     },
-                    "FolderImportPath": {
-                        "value": "/rfd/xx10vxx/es10vw1/Optum_RCM_TEST/to_Dynamics_365"
+                    "sftpwithssh": {
+                      "connectionId": "[parameters('sftpWithSshAdjudicationExternalIdConnection')]",
+                      "connectionName": "[parameters('sftpwithsshConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh')]"
                     },
-                    "FolderProcessPath": {
-                        "value": "/optumintegrationfilestorage/Process_AdjudicationHeader/"
-                    },
-                    "FolderXMLPath": {
-                        "value": "/optumintegrationfilestorage/XMLFiles_AdjudicationHeader/"
-                    },
-                    "HeaderFileName": {
-                        "value": "PackageHeader"
-                    },
-                    "LogicAppState": {
-                        "value": "Disabled"
-                    },
-                    "ManifestFileName": {
-                        "value": "Manifest"
-                    },
-                    "PackageFileName": {
-                        "value": "AdjudicationHeaderImportEntity"
-                    },
-                    "RecurrenceInterval": {
-                        "value": 1
-                    },
-                    "RecurrenceTimeZone": {
-                        "value": "GMT Standard Time"
-                    },
-                    "TextFileName": {
-                        "value": "Adjudication header"
-                    },
-                    "diagnosticSettingName": {
-                        "value": "Optum-integration-loganalytics-workspace"
-                    },
-                    "diagnosticSettingResouceGroupName": {
-                        "value": "rg-dev-ORxMSDynamicsRCM"
-                    },
-                    "diagnosticSettingSubscription": {
-                        "value": "b4f24c37-de92-4f78-809d-d521ce05ea7f"
-                    },
-                    "function_app_id": {
-                        "value": "dev-fa-optum-createpackagezipfile"
-                    },
-                    "logAnalyticWorkspaceName": {
-                        "value": "Optum-integration-loganalytics-workspace"
-                    },
-                    "logicAppNameValue": {
-                        "value": "[parameters('logicAppName')]"
+                    "sftpwithssh_1": {
+                      "connectionId": "[parameters('sftpWithSshConnection')]",
+                      "connectionName": "[parameters('sftpwithssh_1ConnectionName')]",
+                      "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh')]"
                     }
+                  }
+                },
+                "D365FODMFDefinitionGroupId": {
+                  "value": "AdjudicationHeaderImport"
+                },
+                "D365FOLegalEntity": {
+                  "value": "OIS"
+                },
+                "FolderExportPath": {
+                  "value": "/optumintegrationfilestorage/Archive_AdjudicationHeader/"
+                },
+                "FolderImportPath": {
+                  "value": "/rfd/xx10vxx/es10vw1/Optum_RCM_TEST/to_Dynamics_365"
+                },
+                "FolderProcessPath": {
+                  "value": "/optumintegrationfilestorage/Process_AdjudicationHeader/"
+                },
+                "FolderXMLPath": {
+                  "value": "/optumintegrationfilestorage/XMLFiles_AdjudicationHeader/"
+                },
+                "HeaderFileName": {
+                  "value": "PackageHeader"
+                },
+                "LogicAppState": {
+                  "value": "Disabled"
+                },
+                "ManifestFileName": {
+                  "value": "Manifest"
+                },
+                "PackageFileName": {
+                  "value": "AdjudicationHeaderImportEntity"
+                },
+                "RecurrenceInterval": {
+                  "value": 1
+                },
+                "RecurrenceTimeZone": {
+                  "value": "GMT Standard Time"
+                },
+                "TextFileName": {
+                  "value": "Adjudication header"
+                },
+                "diagnosticSettingName": {
+                  "value": "Optum-integration-loganalytics-workspace"
+                },
+                "diagnosticSettingResouceGroupName": {
+                  "value": "rg-dev-ORxMSDynamicsRCM"
+                },
+                "diagnosticSettingSubscription": {
+                  "value": "b4f24c37-de92-4f78-809d-d521ce05ea7f"
+                },
+                "function_app_id": {
+                  "value": "dev-fa-optum-createpackagezipfile"
+                },
+                "logAnalyticWorkspaceName": {
+                  "value": "Optum-integration-loganalytics-workspace"
+                },
+                "logicAppNameValue": {
+                  "value": "[parameters('logicAppName')]"
+                },
+                "azuremonitorlogsConnectionName": {
+                  "value": "azuremonitorlogs"
+                },
+                "azurefileConnectionName": {
+                  "value": "azurefile"
+                },
+                "dynamicsaxConnectionName": {
+                  "value": "dynamicsax"
+                },
+                "office365ConnectionName": {
+                  "value": "office365"
+                },
+                "sftpwithsshConnectionName": {
+                  "value": "sftpwithssh-adjudication"
+                },
+                "sftpwithssh_1ConnectionName": {
+                  "value": "sftpwithssh-1"
+                },
+                "subscriptionId": {
+                  "value": "[parameters('subscriptionId')]"
+
                 }
+              }
             }
         }
     ]
