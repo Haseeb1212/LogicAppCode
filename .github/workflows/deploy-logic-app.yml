@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/APIConnections/AzureFile/template.json'
-        parameters: './RootFolder/APIConnections/AzureFile/parameters.json'
+        template: './RootFolder/APIConnections/AzureMonitorLogs/template.json'
+        parameters: './RootFolder/APIConnections/AzureMonitorLogs/parameters.json'
