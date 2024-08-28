@@ -111,7 +111,7 @@
             "$connections": {
               "value": {
                 "office365": {
-                  "connectionId": "/subscriptions/@parameters('subscriptionId')/resourceGroups/@parameters('resourceGroupName')/providers/Microsoft.Web/connections/office365",
+                  "connectionId": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/@parameters('resourceGroupName')/providers/Microsoft.Web/connections/office365",
                   "connectionName": "office365",
                   "id": "[concat(subscription().id, '/providers/Microsoft.Web/locations/centralus/', '/managedApis/', 'office365')]"
                 }
