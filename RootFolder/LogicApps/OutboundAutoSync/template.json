@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "defaultValue": "dev-la-optum-outbound-autosync-con",
+      "defaultValue": "dev-la-optum-outbound-autosync",
       "type": "String"
     },
     "dynamicsAxConnectionId": {
