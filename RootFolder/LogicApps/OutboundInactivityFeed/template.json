@@ -19,19 +19,24 @@
       "type": "String"
     },
     "dynamicsaxConnectionName": {
-      "value": "dynamicsax"
+      "defaultValue": "",
+      "type": "String"
     },
     "office365ConnectionName": {
-      "value": "office365"
+      "defaultValue": "",
+      "type": "String"
     },
     "sftpwithsshConnectionName": {
-      "value": "sftpwithssh"
+      "defaultValue": "",
+      "type": "String"
     },
     "resourceGroupName": {
-      "value": "rg-dev-ORxMSDynamicsRCM"
+      "defaultValue": "",
+      "type": "String"
     },
     "subscriptionId": {
-      "value": "b4f24c37-de92-4f78-809d-d521ce05ea7f"
+      "defaultValue": "",
+      "type": "String"
     }
   },
     "variables": {},
