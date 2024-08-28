@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "sftpwithssh_1ConnectionName": {
+      "value": "sftpwithssh-1"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
+    },
+    "resourceGroup": {
+      "value": "DynamicsDeployments-eastus"
+    }
+  }
+}
