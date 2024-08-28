@@ -1,53 +1,57 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "azureFileConnectionName": {
-        "defaultValue": "azurefile",
-        "type": "String"
-      },
-      "resourceGroup": {
-        "defaultValue": "",
-        "type": "String"
-      }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "azureFileConnectionName": {
+      "defaultValue": "azurefile",
+      "type": "String"
     },
-    "variables": {},
-    "resources": [
-        {
-            "type": "Microsoft.Web/connections",
-            "apiVersion": "2016-06-01",
-            "name": "[parameters('azureFileConnectionName')]",
-            "location": "centralus",
-            "kind": "V1",
-            "properties": {
-                "displayName": "[concat(parameters('azureFileConnectionName'), 'share')]",
-                "statuses": [
-                    {
-                        "status": "Connected"
-                    }
-                ],
-                "customParameterValues": {},
-                "nonSecretParameterValues": {
-                    "accountName": "optumintegration"
-                },
-                "createdTime": "2023-09-15T12:59:20.3950951Z",
-                "changedTime": "2023-09-15T13:41:50.1332794Z",
-              "api": {
-                "name": "[parameters('azureFileConnectionName')]",
-                "displayName": "Azure File Storage",
-                "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to File Storage to perform various operations such as create, update, get and delete on files in your Azure Storage account.",
-                "iconUri": "[concat('https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3403/', parameters('azureFileConnectionName'), '/icon.png')]",
-                "brandColor": "#804998",
-                "id": "[concat('subscription().id/providers/Microsoft.Web/locations/centralus/managedApis/', 'azurefile')]",
-                "type": "Microsoft.Web/locations/managedApis"
-              },
-                "testLinks": [
-                  {
-                    "requestUri": "[concat('https://management.azure.com:443/subscriptions/',subscription().id,'/resourceGroups/',parameters('resourceGroup'),'/providers/Microsoft.Web/connections/', parameters('azureFileConnectionName'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
-                    "method": "get"
-                  }
-                ]
-            }
-        }
-    ]
+    "resourceGroup": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "subscriptionId": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Web/connections",
+      "apiVersion": "2016-06-01",
+      "name": "[parameters('azureFileConnectionName')]",
+      "location": "centralus",
+      "kind": "V1",
+      "properties": {
+        "displayName": "[concat(parameters('azureFileConnectionName'), 'share')]",
+        "statuses": [
+          {
+            "status": "Connected"
+          }
+        ],
+        "customParameterValues": {},
+        "nonSecretParameterValues": {
+          "accountName": "optumintegration"
+        },
+        "createdTime": "2023-09-15T12:59:20.3950951Z",
+        "changedTime": "2023-09-15T13:41:50.1332794Z",
+        "api": {
+          "name": "[parameters('azureFileConnectionName')]",
+          "displayName": "Azure File Storage",
+          "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to File Storage to perform various operations such as create, update, get and delete on files in your Azure Storage account.",
+          "iconUri": "[concat('https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3403/azurefile', '/icon.png')]",
+          "brandColor": "#804998",
+          "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azurefile')]",
+          "type": "Microsoft.Web/locations/managedApis"
+        },
+        "testLinks": [
+          {
+            "requestUri": "[concat('https://management.azure.com:443/subscriptions/',parameters('subscriptionId'),'/resourceGroups/',parameters('resourceGroup'),'/providers/Microsoft.Web/connections/', parameters('azureFileConnectionName'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+            "method": "get"
+          }
+        ]
+      }
+    }
+  ]
 }
