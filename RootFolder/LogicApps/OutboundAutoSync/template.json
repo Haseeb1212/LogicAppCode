@@ -1,24 +1,44 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "logicAppName": {
-            "defaultValue": "dev-la-optum-outbound-autosync",
-            "type": "String"
-        },
-        "dynamics365Connection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/dynamicsax",
-            "type": "String"
-        },
-        "office365Connection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/office365",
-            "type": "String"
-        },
-        "sftpWithSshConnection": {
-            "defaultValue": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/resourceGroups/rg-dev-ORxMSDynamicsRCM/providers/Microsoft.Web/connections/sftpwithssh",
-            "type": "String"
-        }
+  "parameters": {
+    "logicAppName": {
+      "defaultValue": "dev-la-optum-outbound-autosync-con",
+      "type": "String"
     },
+    "dynamicsAxConnectionId": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "office365ConnectionId": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "sftpWithSshConnectionId": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "dynamicsaxConnectionName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "office365ConnectionName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "sftpwithsshConnectionName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "resourceGroupName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "subscriptionId": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
     "variables": {},
     "resources": [
         {
@@ -787,21 +807,21 @@
                 "parameters": {
                     "$connections": {
                         "value": {
-                            "dynamicsax": {
-                                "connectionId": "[parameters('dynamics365Connection')]",
-                                "connectionName": "dynamicsax",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax"
-                            },
-                            "office365": {
-                                "connectionId": "[parameters('office365Connection')]",
-                                "connectionName": "office365",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/office365"
-                            },
-                            "sftpwithssh": {
-                                "connectionId": "[parameters('sftpWithSshConnection')]",
-                                "connectionName": "sftpwithssh",
-                                "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh"
-                            }
+                          "dynamicsax": {
+                            "connectionId": "[parameters('dynamicsAxConnectionId')]",
+                            "connectionName": "[parameters('dynamicsaxConnectionName')]",
+                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/dynamicsax"
+                          },
+                          "office365": {
+                            "connectionId": "[parameters('office365ConnectionId')]",
+                            "connectionName": "[parameters('office365ConnectionName')]",
+                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/office365"
+                          },
+                          "sftpwithssh": {
+                            "connectionId": "[parameters('sftpWithSshConnectionId')]",
+                            "connectionName": "[parameters('sftpwithsshConnectionName')]",
+                            "id": "/subscriptions/b4f24c37-de92-4f78-809d-d521ce05ea7f/providers/Microsoft.Web/locations/centralus/managedApis/sftpwithssh"
+                          }
                         }
                     },
                     "D365FODMFDefinitionGroupId": {
