@@ -7,6 +7,9 @@
     },
     "resourceGroup": {
       "value": "DynamicsDeployments-eastus"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
     }
   }
 }
