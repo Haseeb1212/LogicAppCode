@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/APIConnections/Dynamics365/template.json'
-        parameters: './RootFolder/APIConnections/Dynamics365/parameters.json'
+        template: './RootFolder/APIConnections/KeyVault/template.json'
+        parameters: './RootFolder/APIConnections/KeyVault/parameters.json'
