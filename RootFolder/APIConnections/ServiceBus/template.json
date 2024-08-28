@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "serviceBusConnectionName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "subscriptionId": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('serviceBusConnectionName')]",
+            "location": "centralus",
+            "kind": "V1",
+            "properties": {
+                "displayName": "[parameters('serviceBusConnectionName')]",
+                "statuses": [
+                    {
+                        "status": "Connected"
+                    }
+                ],
+                "customParameterValues": {},
+                "createdTime": "2023-09-26T15:45:01.8351167Z",
+                "changedTime": "2023-09-26T15:46:14.1049283Z",
+              "api": {
+                "name": "[parameters('serviceBusConnectionName')]",
+                "displayName": "Service Bus",
+                "description": "Connect to Azure Service Bus to send and receive messages. You can perform actions such as send to queue, send to topic, receive from queue, receive from subscription, etc.",
+                "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1657/1.0.1657.3444/', parameters('serviceBusConnectionName'), '/icon.png')]",
+                "brandColor": "#c4d5ff",
+                "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/servicebus')]",
+                "type": "Microsoft.Web/locations/managedApis"
+              },
+                "testLinks": []
+            }
+        }
+    ]
+}
