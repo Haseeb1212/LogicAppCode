@@ -1,30 +1,30 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": null
+      "value": "dev-la-optum-inbound-adjudicationheader-haseeb"
     },
     "createPackageZipFileFunctionAppExternalId": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/sites/FunctionAppDeploymentPOC1"
     },
     "azureFileConnection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/azurefile"
     },
     "azureMonitorLogsConnection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/azuremonitorlogs"
     },
     "dynamics365Connection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/dynamicsax"
     },
     "office365Connection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/office365-dev"
     },
     "sftpWithSshAdjudicationExternalIdConnection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/sftpwithssh-adjudication"
     },
     "sftpWithSshConnection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/sftpwithssh-1"
     },
     "azuremonitorlogsConnectionName": {
       "value": "azuremonitorlogs"
@@ -44,8 +44,17 @@
     "sftpwithssh_1ConnectionName": {
       "value": "sftpwithssh-1"
     },
+    "D365FOURL": {
+      "value": "optum-perf.sandbox.operations.dynamics.com"
+    },
+    "functionAppName": {
+      "value": "FunctionAppDeploymentPOC1"
+    },
     "subscriptionId": {
       "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
+    },
+    "resourceGroupName": {
+      "value": "DynamicsDeployments-eastus"
     }
   }
 }
