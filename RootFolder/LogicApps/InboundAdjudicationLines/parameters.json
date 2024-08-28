@@ -6,7 +6,7 @@
       "value": "dev-la-haseeb-optum-inbound-adjudicationlines"
     },
     "createPackageZipFileFunctionAppExternalId": {
-      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/sites/FunctionAppDeployment2"
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/sites/FunctionAppDeploymentPOC1"
     },
     "azureFileConnection": {
       "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/azurefile"
@@ -49,7 +49,7 @@
       "value": "sftpwithssh-1"
     },
     "functionAppName": {
-      "value": "FunctionAppDeployment2"
+      "value": "FunctionAppDeploymentPOC1"
     },
     "subscriptionId": {
       "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
