@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "office365Connection": {
-      "value": "office365-dev"
+      "value": "office365-8"
     },
     "resourceGroupName": {
       "value": "DynamicsDeployments-eastus"
