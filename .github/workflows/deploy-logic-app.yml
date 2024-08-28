@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './ExportedTemplate/template.json'
-        parameters: './ExportedTemplate/parameters.json'
+        template: './office365/template.json'
+        parameters: './office365/parameters.json'
