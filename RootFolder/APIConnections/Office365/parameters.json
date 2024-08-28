@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "office365ConnectionName": {
-      "value": "office365"
+      "value": "office365-unzila"
     },
     "subscriptionId": {
       "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
