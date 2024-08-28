@@ -34,7 +34,6 @@
       "defaultValue": "",
       "type": "String"
     },
-
     "azuremonitorlogsConnectionName": {
       "defaultValue": "",
       "type": "String"
@@ -91,100 +90,136 @@
                 "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
                     "contentVersion": "1.0.0.0",
-                    "parameters": {
-                        "$connections": {
-                            "defaultValue": {},
-                            "type": "Object"
-                        },
-                        "D365FODMFDefinitionGroupId": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "D365FOLegalEntity": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "D365FOURL": {
-                            "defaultValue": "optum-perf.sandbox.operations.dynamics.com/",
-                            "type": "String"
-                        },
-                        "EmailTo": {
-                            "defaultValue": "ryan_campbell@optum.com",
-                            "type": "String"
-                        },
-                        "FolderExportPath": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "FolderImportPath": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "FolderProcessPath": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "FolderXMLPath": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "HeaderFileName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "LogicAppState": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "ManifestFileName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "PackageFileName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "RecurrenceFrequency": {
-                            "defaultValue": "Day",
-                            "type": "String"
-                        },
-                        "RecurrenceInterval": {
-                            "defaultValue": 1,
-                            "type": "Int"
-                        },
-                        "RecurrenceTimeZone": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "TextFileName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "diagnosticSettingName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "diagnosticSettingResouceGroupName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "diagnosticSettingSubscription": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "function_app_id": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "logAnalyticWorkspaceName": {
-                            "defaultValue": "",
-                            "type": "String"
-                        },
-                        "logicAppNameValue": {
-                            "defaultValue": "",
-                            "type": "String"
-                        }
+                  "parameters": {
+                    "$connections": {
+                      "defaultValue": {},
+                      "type": "Object"
                     },
+                    "D365FODMFDefinitionGroupId": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "D365FOLegalEntity": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "D365FOURL": {
+                      "defaultValue": "optum-perf.sandbox.operations.dynamics.com/",
+                      "type": "String"
+                    },
+                    "EmailTo": {
+                      "defaultValue": "ryan_campbell@optum.com",
+                      "type": "String"
+                    },
+                    "FolderExportPath": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "FolderImportPath": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "FolderProcessPath": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "FolderXMLPath": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "HeaderFileName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "LogicAppState": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "ManifestFileName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "PackageFileName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "RecurrenceFrequency": {
+                      "defaultValue": "Day",
+                      "type": "String"
+                    },
+                    "RecurrenceInterval": {
+                      "defaultValue": 1,
+                      "type": "Int"
+                    },
+                    "RecurrenceTimeZone": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "TextFileName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "diagnosticSettingName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "diagnosticSettingResouceGroupName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "diagnosticSettingSubscription": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "function_app_id": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "logAnalyticWorkspaceName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "logicAppNameValue": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "azuremonitorlogsConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "azurefileConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "dynamicsaxConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "office365ConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "sftpwithsshConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "sftpwithssh_1ConnectionName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "functionAppName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "subscriptionId": {
+                      "defaultValue": "",
+                      "type": "String"
+                    },
+                    "resourceGroupName": {
+                      "defaultValue": "",
+                      "type": "String"
+                    }
+                  },
                     "triggers": {
                         "Recurrence": {
                             "recurrence": {
@@ -1509,7 +1544,6 @@
                 },
                 "subscriptionId": {
                   "value": "[parameters('subscriptionId')]"
-
                 },
                 "resourceGroupName": {
                   "value": "[parameters('resourceGroupName')]"
