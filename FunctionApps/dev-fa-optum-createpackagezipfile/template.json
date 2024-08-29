@@ -123,7 +123,7 @@
                 "virtualApplications": [
                     {
                         "virtualPath": "/",
-                        "physicalPath": "FunctionApps/dev-fa-optum-createpackagezipfile/wwwroot",
+                        "physicalPath": "site\\wwwroot",
                         "preloadEnabled": false
                     }
                 ],
@@ -200,13 +200,13 @@
                 "[resourceId('Microsoft.Web/sites', parameters('sites_dev_fa_optum_createpackagezipfile_name'))]"
             ],
             "properties": {
-                "script_root_path_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/",
-                "script_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/bin/CreatePackageZipFile.dll",
-                "config_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/function.json",
-                "test_data_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/data/Functions/sampledata/CreatePackageZipFile.dat",
-                "href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/functions/CreatePackageZipFile",
+                "script_root_path_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/",
+                "script_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/bin/CreatePackageZipFile.dll",
+                "config_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/function.json",
+                "test_data_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/data/Functions/sampledata/CreatePackageZipFile.dat",
+                "href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/functions/CreatePackageZipFile",
                 "config": {},
-                "invoke_url_template": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/api/createpackagezipfile",
+                "invoke_url_template": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/api/createpackagezipfile",
                 "language": "DotNetAssembly",
                 "isDisabled": false
             }
@@ -220,7 +220,7 @@
                 "[resourceId('Microsoft.Web/sites', parameters('sites_dev_fa_optum_createpackagezipfile_name'))]"
             ],
             "properties": {
-                "siteName": "dev-fa-optum-createpackagezipfile",
+                "siteName": "dev-fa-optum-createpackagezipfile-haseeb",
                 "hostNameType": "Verified"
             }
         }
