@@ -1,0 +1,37 @@
+name: Deploy Azure Function App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
+    # Login to Azure using a service principal
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Deploy the ARM template to create the Function App infrastructure
+    - name: 'Deploy ARM template'
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        template: './arm-templates/template.json'
+        parameters: './arm-templates/parameters.json'
+
+    # Deploy the Function App code using Azure Functions Core Tools
+    - name: 'Deploy Function App'
+      run: |
+        func azure functionapp publish ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
+      env:
+        AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
