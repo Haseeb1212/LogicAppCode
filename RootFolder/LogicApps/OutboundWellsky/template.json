@@ -1331,7 +1331,7 @@
                 "connectionName": "[parameters('dynamicsAXConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs')]"
               },
-              "keyvault_1": {
+              "keyvault": {
                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('keyVaultConnectionName'))]",
                 "connectionName": "[parameters('keyVaultConnectionName')]",
                 "connectionProperties": {
