@@ -123,7 +123,7 @@
                 "virtualApplications": [
                     {
                         "virtualPath": "/",
-                        "physicalPath": "site\\wwwroot",
+                        "physicalPath": "FunctionApps/dev-fa-optum-createpackagezipfile/wwwroot",
                         "preloadEnabled": false
                     }
                 ],
