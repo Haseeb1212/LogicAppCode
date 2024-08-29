@@ -176,13 +176,16 @@
               "type": "String"
             },
             "functionAppName": {
-              "value": "[parameters('functionAppName')]"
+              "defaultValue": "",
+              "type": "String"
             },
             "resourceGroupName": {
-              "value": "[parameters('resourceGroupName')]"
+              "defaultValue": "",
+              "type": "String"
             },
             "subscriptionId": {
-              "value": "[parameters('subscriptionId')]"
+              "defaultValue": "",
+              "type": "String"
             }
           },
           "triggers": {
