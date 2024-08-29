@@ -23,15 +23,15 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
-        template: './arm-templates/template.json'
-        parameters: './arm-templates/parameters.json'
+        resourceGroupName: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        template: 'FunctionApps/dev-fa-optum-createpackagezipfile/template.json'
+        parameters: 'FunctionApps/dev-fa-optum-createpackagezipfile/parameters.json'
 
     # Deploy the Function App code using Azure Functions Core Tools
     - name: 'Deploy Function App'
       run: |
-        func azure functionapp publish ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
+        func azure functionapp publish 'dev-fa-optum-createpackagezipfile'
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
-        AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
+        AZURE_RESOURCE_GROUP: 'DynamicsDeployments-eastus'
+        AZURE_FUNCTIONAPP_NAME: 'dev-fa-optum-createpackagezipfile'
