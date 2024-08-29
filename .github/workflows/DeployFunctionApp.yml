@@ -1,9 +1,7 @@
 name: Deploy Azure Function App
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -30,8 +28,8 @@ jobs:
     # Deploy the Function App code using Azure Functions Core Tools
     - name: 'Deploy Function App'
       run: |
-        func azure functionapp publish 'dev-fa-optum-createpackagezipfile'
+        func azure functionapp publish 'dev-fa-optum-createpackagezipfile-haseeb'
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_RESOURCE_GROUP: 'DynamicsDeployments-eastus'
-        AZURE_FUNCTIONAPP_NAME: 'dev-fa-optum-createpackagezipfile'
+        AZURE_FUNCTIONAPP_NAME: 'dev-fa-optum-createpackagezipfile-haseeb'
