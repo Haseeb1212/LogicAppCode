@@ -171,12 +171,12 @@
           "$connections": {
             "value": {
               "azuremonitorlogs": {
-                "connectionId": "[parameters('azureMonitorLogsConnection'))]",
+                "connectionId": "[parameters('azureMonitorLogsConnection')]",
                 "connectionName": "[parameters('azureMonitorLogsConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs')]"
               },
               "office365": {
-                "connectionId": "[parameters('office365Connection'))]",
+                "connectionId": "[parameters('office365Connection')]",
                 "connectionName": "[parameters('office365ConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
               }
