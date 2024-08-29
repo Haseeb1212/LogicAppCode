@@ -1266,7 +1266,7 @@
               "inputs": {
                 "host": {
                   "connection": {
-                    "name": "@parameters('$connections')['keyvault_1']['connectionId']"
+                    "name": "@parameters('$connections')['keyvault']['connectionId']"
                   }
                 },
                 "method": "get",
@@ -1291,7 +1291,7 @@
               "inputs": {
                 "host": {
                   "connection": {
-                    "name": "@parameters('$connections')['keyvault_1']['connectionId']"
+                    "name": "@parameters('$connections')['keyvault']['connectionId']"
                   }
                 },
                 "method": "get",
