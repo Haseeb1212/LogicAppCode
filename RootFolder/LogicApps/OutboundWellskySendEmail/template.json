@@ -115,7 +115,7 @@
                     },
                     "host": {
                       "connection": {
-                        "name": "@parameters('$connections')['office365']['connectionId']"
+                        "name": "@parameters('$connections')['office365-dev']['connectionId']"
                       }
                     },
                     "method": "post",
