@@ -6,7 +6,7 @@
       "defaultValue": "",
       "type": "String"
     },
-    "dynamics365Connection": {
+    "dynamicsAXConnection": {
       "defaultValue": "",
       "type": "String"
     },
@@ -1327,12 +1327,12 @@
           "$connections": {
             "value": {
               "dynamicsax": {
-                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('dynamicsAXConnectionName'))]",
+                "connectionId": "[parameters('dynamicsAXConnection')]",
                 "connectionName": "[parameters('dynamicsAXConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs')]"
               },
               "keyvault": {
-                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('keyVaultConnectionName'))]",
+                "connectionId": "[parameters('keyVaultConnection')]",
                 "connectionName": "[parameters('keyVaultConnectionName')]",
                 "connectionProperties": {
                   "authentication": {
@@ -1342,7 +1342,7 @@
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/keyvault')]"
               },
               "servicebus": {
-                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('serviceBusConnectionName'))]",
+                "connectionId": "[parameters('serviceBusConnectionName')]",
                 "connectionName": "[parameters('serviceBusConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/servicebus')]"
               }
