@@ -129,6 +129,14 @@
             "queuetype": {
               "defaultValue": "",
               "type": "String"
+            },
+            "subscriptionId": {
+              "defaultValue": "",
+              "type": "String"
+            },
+            "resourceGroupName": {
+              "defaultValue": "",
+              "type": "String"
             }
           },
           "triggers": {
