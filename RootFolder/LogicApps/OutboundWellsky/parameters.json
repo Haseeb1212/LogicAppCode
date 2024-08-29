@@ -1,18 +1,36 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": null
+      "value": "dev-la-optum-outbound-wellsky-haseeb"
     },
     "dynamics365Connection": {
-      "value": null
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/dynamicsax"
     },
-    "keyvaultConnection": {
-      "value": null
+    "keyVaultConnection": {
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/keyvault"
     },
-    "servicebusConnection": {
-      "value": null
+    "serviceBusConnection": {
+      "value": "/subscriptions/5726837a-3f90-474d-97a1-1b210a1e5fc4/resourceGroups/DynamicsDeployments-eastus/providers/Microsoft.Web/connections/servicebus"
+    },
+    "dynamicsaxConnectionName": {
+      "value": "dynamicsax"
+    },
+    "keyVaultConnectionName": {
+      "value": "keyvault"
+    },
+    "serviceBusConnectionName": {
+      "value": "servicebus"
+    },
+    "D365FOURL": {
+      "value": "optum-perf.sandbox.operations.dynamics.com"
+    },
+    "subscriptionId": {
+      "value": "5726837a-3f90-474d-97a1-1b210a1e5fc4"
+    },
+    "resourceGroupName": {
+      "value": "DynamicsDeployments-eastus"
     }
   }
 }
