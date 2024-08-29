@@ -115,7 +115,7 @@
                     },
                     "host": {
                       "connection": {
-                        "name": "@parameters('$connections')['office365-dev']['connectionId']"
+                        "name": "@parameters('$connections')['office365']['connectionId']"
                       }
                     },
                     "method": "post",
@@ -171,12 +171,12 @@
           "$connections": {
             "value": {
               "azuremonitorlogs": {
-                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('azureMonitorLogsConnectionName'))]",
+                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('azureMonitorLogsConnection'))]",
                 "connectionName": "[parameters('azureMonitorLogsConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/azuremonitorlogs')]"
               },
-              "office365-dev": {
-                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('office365ConnectionName'))]",
+              "office365": {
+                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('office365Connection'))]",
                 "connectionName": "[parameters('office365ConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/office365')]"
               }
