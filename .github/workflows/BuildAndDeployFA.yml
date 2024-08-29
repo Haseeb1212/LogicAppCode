@@ -1,22 +1,13 @@
 name: Build and Deploy .NET/C# app to Azure Functions
 on:
-  push:
-    branches:
-      - master
-      - dev
-      - releases/*
-    paths-ignore:
-      - '**.md'
-  pull_request:
-    paths-ignore:
-      - '**.md'
+  workflow_dispatch:
 
 permissions:
   id-token: write
 
 env: 
   AZURE_FUNCTIONAPP_NAME: dev-fa-haseeb-optum
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'FunctionApps/Azure functions/wwwroot.zip'
   DOTNET_VERSION: '3.1.403'
 
 jobs:
@@ -54,9 +45,7 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: E2E Run Azure Functions Action
       uses: ./
