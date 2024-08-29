@@ -1342,7 +1342,7 @@
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/keyvault')]"
               },
               "servicebus": {
-                "connectionId": "[parameters('serviceBusConnectionName')]",
+                "connectionId": "[parameters('serviceBusConnection')]",
                 "connectionName": "[parameters('serviceBusConnectionName')]",
                 "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/servicebus')]"
               }
