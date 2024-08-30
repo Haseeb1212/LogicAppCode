@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: E2E Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v1
@@ -37,7 +37,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: E2E Run Azure Functions Action
-      uses: ./.github/workflows/BuildAndDeployFA.yml
+      uses: ./
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
