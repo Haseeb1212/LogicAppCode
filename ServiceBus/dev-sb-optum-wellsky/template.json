@@ -1,12 +1,16 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "namespaces_dev_sb_optum_wellsky_name": {
-            "defaultValue": "",
-            "type": "String"
-        }
+  "parameters": {
+    "namespaces_dev_sb_optum_wellsky_name": {
+      "defaultValue": "",
+      "type": "String"
     },
+    "servicebus_queue_name": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
     "variables": {},
     "resources": [
         {
@@ -58,30 +62,30 @@
                 "trustedServiceAccessEnabled": false
             }
         },
-        {
-            "type": "Microsoft.ServiceBus/namespaces/queues",
-            "apiVersion": "2022-10-01-preview",
-            "name": "[concat(parameters('namespaces_dev_sb_optum_wellsky_name'), '/dev-sq-optum-wellsky')]",
-            "location": "centralus",
-            "dependsOn": [
-                "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dev_sb_optum_wellsky_name'))]"
-            ],
-            "properties": {
-                "maxMessageSizeInKilobytes": 256,
-                "lockDuration": "PT1M",
-                "maxSizeInMegabytes": 1024,
-                "requiresDuplicateDetection": false,
-                "requiresSession": true,
-                "defaultMessageTimeToLive": "P14D",
-                "deadLetteringOnMessageExpiration": false,
-                "enableBatchedOperations": true,
-                "duplicateDetectionHistoryTimeWindow": "PT10M",
-                "maxDeliveryCount": 1,
-                "status": "Active",
-                "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
-                "enablePartitioning": false,
-                "enableExpress": false
-            }
+      {
+        "type": "Microsoft.ServiceBus/namespaces/queues",
+        "apiVersion": "2022-10-01-preview",
+        "name": "[concat(parameters('namespaces_dev_sb_optum_wellsky_name'), parameters('servicebus_queue_name'))]",
+        "location": "centralus",
+        "dependsOn": [
+          "[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_dev_sb_optum_wellsky_name'))]"
+        ],
+        "properties": {
+          "maxMessageSizeInKilobytes": 256,
+          "lockDuration": "PT1M",
+          "maxSizeInMegabytes": 1024,
+          "requiresDuplicateDetection": false,
+          "requiresSession": true,
+          "defaultMessageTimeToLive": "P14D",
+          "deadLetteringOnMessageExpiration": false,
+          "enableBatchedOperations": true,
+          "duplicateDetectionHistoryTimeWindow": "PT10M",
+          "maxDeliveryCount": 1,
+          "status": "Active",
+          "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
+          "enablePartitioning": false,
+          "enableExpress": false
         }
+      }
     ]
 }
