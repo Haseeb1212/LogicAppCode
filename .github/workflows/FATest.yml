@@ -53,5 +53,5 @@ jobs:
       - name: Deploy Function to Azure
         run: |
           az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
-          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --src ${{ env.OUTPUT_PATH }}/functions.zip
+          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --src ${{ env.OUTPUT_PATH }}/FunctionApps/Azure functions
 
