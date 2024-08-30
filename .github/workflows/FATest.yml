@@ -35,8 +35,9 @@ jobs:
     needs: [build]
     env:
       FUNC_APP_NAME: FunctionAppDeploymentPOCTest
+      RESOURCE_GROUP: DynamicsDeployments-eastus
       OUTPUT_PATH: ${{ github.workspace }}/.output
-
+  
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v1
@@ -51,5 +52,6 @@ jobs:
 
       - name: Deploy Function to Azure
         run: |
-          az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group DynamicsDeployments-eastus --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
-          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group DynamicsDeployments-eastus --src ${{ env.OUTPUT_PATH }}/FunctionTest.cs
+          az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --src ${{ env.OUTPUT_PATH }}/functions.zip
+
