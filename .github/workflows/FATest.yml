@@ -21,7 +21,7 @@ jobs:
 
     - name: Publish Functions
       run: |
-        cd path/to/csproj/directory  # Adjust this path as needed
+        cd ./FunctionApps/Azure functions  # Adjust this path as needed
         dotnet publish FunctionAppPOCTestOptum.csproj --configuration Release --output ${{ env.OUTPUT_PATH }}
 
     - name: Package Functions
