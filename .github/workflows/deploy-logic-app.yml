@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/LogicApps/OutboundAutoSync/template.json'
-        parameters: './RootFolder/LogicApps/OutboundAutoSync/parameters.json'
+        template: './ServiceBus/dev-sb-optum-wellsky/template.json'
+        parameters: './ServiceBus/dev-sb-optum-wellsky/parameters.json'
