@@ -1,9 +1,12 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-      "namespaces_dev_sb_optum_wellsky_name": {
-        "value": "dev-sb-optum-wellsky-haseeb"
-      }
+  "parameters": {
+    "namespaces_dev_sb_optum_wellsky_name": {
+      "value": "dev-sb-optum-wellsky-haseeb"
+    },
+    "servicebus_queue_name": {
+      "value": "dev-sq-optum-wellsky-haseeb"
     }
+  }
 }
