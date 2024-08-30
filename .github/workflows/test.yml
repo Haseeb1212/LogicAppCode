@@ -31,6 +31,6 @@ jobs:
         id: fa
         with:
           app-name: 'FunctionAppDeployment2'
-          slot-name: 'Dev-Haseeb'
+          slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZURE_FA_PUBLISH_PROFILE  }}
