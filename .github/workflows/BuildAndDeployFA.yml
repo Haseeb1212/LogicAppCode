@@ -35,7 +35,10 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+        
+    - name: 'Again checkout'  
+      uses: actions/checkout@v3
+      
     - name: E2E Run Azure Functions Action
       uses: ./
       id: fa
