@@ -21,7 +21,7 @@ jobs:
 
     - name: Publish Functions
       run: |
-        cd "./FunctionApps/Azure functions"  # Enclose the path in quotes
+        cd "./FunctionApps/Azure functions"
         dotnet publish FunctionAppPOCTestOptum.csproj --configuration Release --output ${{ env.OUTPUT_PATH }}
 
     - name: Package Functions
@@ -29,12 +29,13 @@ jobs:
       with:
         name: functions
         path: ${{ env.OUTPUT_PATH }}
-  
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
     env:
-      FUNC_APP_NAME: FunctionAppDeploymentPOC1
+      FUNC_APP_NAME: FunctionAppDeploymentPOCTest
+      OUTPUT_PATH: ${{ github.workspace }}/.output
 
     steps:
       - name: Download Artifact
@@ -49,7 +50,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy Function to Azure
-        uses: Azure/functions-action@v1
-        with:
-          app-name: ${{ env.FUNC_APP_NAME }}
-          package: ${{ env.OUTPUT_PATH }}
+        run: |
+          az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group DynamicsDeployments-eastus --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group DynamicsDeployments-eastus --src ${{ env.OUTPUT_PATH }}/FunctionTest.cs
