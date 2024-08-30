@@ -1,7 +1,7 @@
 name: Build & Deploy
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'FunctionApps/Azure functions'
-  DOTNET_VERSION: 6.0.x
+  DOTNET_VERSION: 8.0.x
   OUTPUT_PATH: ${{ github.workspace }}/.output
 
 on:
