@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './LogAnalytics-Template/template.json'
-        parameters: './LogAnalytics-Template/parameters.json'
+        template: './ASP-Template/template.json'
+        parameters: './ASP-Template/parameters.json'
