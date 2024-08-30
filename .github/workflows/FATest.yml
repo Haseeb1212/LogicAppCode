@@ -20,7 +20,9 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Publish Functions
-      run: dotnet publish src/FunctionAppPOCTestOptum.csproj --configuration Release --output ${{ env.OUTPUT_PATH }}
+      run: |
+        cd path/to/csproj/directory  # Adjust this path as needed
+        dotnet publish FunctionAppPOCTestOptum.csproj --configuration Release --output ${{ env.OUTPUT_PATH }}
 
     - name: Package Functions
       uses: actions/upload-artifact@v1
