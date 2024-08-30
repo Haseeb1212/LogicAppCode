@@ -17,7 +17,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-      with: ${{ github.repository }}
 
     - name: E2E Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v1
