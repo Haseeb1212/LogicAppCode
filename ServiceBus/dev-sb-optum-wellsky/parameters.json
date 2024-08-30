@@ -6,7 +6,7 @@
       "value": "dev-sb-optum-wellsky-haseeb"
     },
     "servicebus_queue_name": {
-      "value": "dev-sq-optum-wellsky-haseeb"
+      "value": "/dev-sq-optum-wellsky-haseeb"
     }
   }
 }
