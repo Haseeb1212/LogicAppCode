@@ -41,7 +41,7 @@ jobs:
     env:
       FUNC_APP_NAME: FunctionAppDeploymentPOCTest
       RESOURCE_GROUP: DynamicsDeployments-eastus
-      ZIP_PATH: ${{ github.workspace }}/.output/FunctionAppPOCTestOptumHaseeb.zip
+      ZIP_PATH: ${{ github.workspace }}/.output
 
     steps:
       - name: Download Artifact
