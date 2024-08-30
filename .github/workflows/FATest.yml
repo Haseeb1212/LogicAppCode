@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     env:
-      FUNC_APP_NAME: FunctionAppDeployment2
+      FUNC_APP_NAME: FunctionAppDeploymentPOC1
 
     steps:
       - name: Download Artifact
