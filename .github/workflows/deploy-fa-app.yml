@@ -19,7 +19,7 @@ jobs:
           dotnet-version: 8.0.x
         
       - name: Install dependencies
-        run: dotnet restore ./FunctionApps/Azure functions/FunctionAppPOCTestOptum.csproj
+        run: dotnet restore "./FunctionApps/Azure functions/FunctionAppPOCTestOptum.csproj"
 
       - name: Build
         run: dotnet build ./FunctionApps/Azure functions/FunctionAppPOCTestOptum.csproj --configuration Release --no-restore
