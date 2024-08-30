@@ -1,13 +1,13 @@
-name: Build and Deploy .NET/C# app to Azure Functions
+name: RUN_E2E_TESTS_DOTNET3_LCON
 on:
   workflow_dispatch:
 
 permissions:
   id-token: write
 
-env: 
-  AZURE_FUNCTIONAPP_NAME: dev-fa-haseeb-optum
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+env:
+  AZURE_FUNCTIONAPP_NAME: FunctionAppDeployment2
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './FunctionApps/Azure functions'
   DOTNET_VERSION: '3.1.403'
 
 jobs:
@@ -29,12 +29,12 @@ jobs:
     - name: Build GitHub Action
       run: npm run build
 
-    - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
+    - name: E2E Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build Step #NEED BUILD RULES
+    - name: E2E Resolve Project Dependencies Using Dotnet
       shell: pwsh
       run: |
         pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
@@ -60,7 +60,7 @@ jobs:
         $i = 0
         while ($i -lt 10) {
           sleep 10
-          $RESPONSE = $(curl "${{ steps.fa.outputs.app-url }}/api/HttpTrigger")
+          $RESPONSE = $(curl "${{ steps.fa.outputs.app-url }}/api/FunctionTest")
           $RESULT = ($RESPONSE -eq "$env:GITHUB_SHA")
           if ($RESULT) {
             exit 0
