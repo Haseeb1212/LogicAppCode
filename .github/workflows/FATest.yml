@@ -23,6 +23,11 @@ jobs:
       run: |
         cd "./FunctionApps/Azure functions"
         dotnet publish FunctionAppPOCTestOptum.csproj --configuration Release --output ${{ env.OUTPUT_PATH }}
+    
+    - name: Create Zip Package
+      run: |
+        cd ${{ env.OUTPUT_PATH }}
+        zip -r functionapp.zip .
 
     - name: Package Functions
       uses: actions/upload-artifact@v1
@@ -36,8 +41,8 @@ jobs:
     env:
       FUNC_APP_NAME: FunctionAppDeploymentPOCTest
       RESOURCE_GROUP: DynamicsDeployments-eastus
-      OUTPUT_PATH: ${{ github.workspace }}/.output
-  
+      ZIP_PATH: ${{ github.workspace }}/.output/FunctionAppPOCTestOptumHaseeb.zip
+
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v1
@@ -52,7 +57,5 @@ jobs:
 
       - name: Deploy Function to Azure
         run: |
-              az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
-              az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --src "${{ env.OUTPUT_PATH }}/functions/FunctionAppPOCTestOptumHaseeb.zip"
-
-
+          az functionapp config appsettings set --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+          az functionapp deployment source config-zip --name ${{ env.FUNC_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --src "${{ env.ZIP_PATH }}"
