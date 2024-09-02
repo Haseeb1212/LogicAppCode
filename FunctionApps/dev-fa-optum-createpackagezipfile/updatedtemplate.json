@@ -59,7 +59,7 @@
                 "httpsOnly": true,
                 "redundancyMode": "None",
                 "publicNetworkAccess": "Enabled",
-                "storageAccountRequired": true,
+                "storageAccountRequired": false,
                 "keyVaultReferenceIdentity": "SystemAssigned"
             }
         },
