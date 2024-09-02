@@ -7,7 +7,7 @@ env:
   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   RESOURCE_GROUP: DynamicsDeployments-eastus
   LOCATION: Central US
-  FUNCTION_APP_NAME: FunctionApp-Haseeb
+  FUNCTION_APP_NAME: FunctionApp-Haseeb-Test
 
 jobs:
   deploy:
