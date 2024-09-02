@@ -53,13 +53,13 @@
                 "clientCertEnabled": false,
                 "clientCertMode": "Required",
                 "hostNamesDisabled": false,
-                "customDomainVerificationId": "F2B63D800D0E93BB2B3A4314BA947A22300311C0EFDECAD4F14C70431AA0BBF4",
+                "customDomainVerificationId": "6B839AC506D4E9BFB046E7716B027CD895C9A76B306EBC140041DF5072668B77",
                 "containerSize": 1536,
                 "dailyMemoryTimeQuota": 0,
                 "httpsOnly": true,
                 "redundancyMode": "None",
                 "publicNetworkAccess": "Enabled",
-                "storageAccountRequired": false,
+                "storageAccountRequired": true,
                 "keyVaultReferenceIdentity": "SystemAssigned"
             }
         },
@@ -115,10 +115,10 @@
                 "logsDirectorySizeLimit": 35,
                 "detailedErrorLoggingEnabled": false,
                 "publishingUsername": "$dev-fa-optum-createpackagezipfile",
-                "scmType": "None",
+                "scmType": "ZipDeploy",
                 "use32BitWorkerProcess": true,
                 "webSocketsEnabled": false,
-                "alwaysOn": false,
+                "alwaysOn": true,
                 "managedPipelineMode": "Integrated",
                 "virtualApplications": [
                     {
@@ -142,6 +142,24 @@
                     "supportCredentials": false
                 },
                 "localMySqlEnabled": false,
+                "ipSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 2147483647,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 2147483647,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
                 "scmIpSecurityRestrictionsUseMain": false,
                 "http20Enabled": false,
                 "minTlsVersion": "1.2",
@@ -182,13 +200,13 @@
                 "[resourceId('Microsoft.Web/sites', parameters('sites_dev_fa_optum_createpackagezipfile_name'))]"
             ],
             "properties": {
-                "script_root_path_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/",
-                "script_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/bin/CreatePackageZipFile.dll",
-                "config_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/function.json",
-                "test_data_href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/vfs/data/Functions/sampledata/CreatePackageZipFile.dat",
-                "href": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/admin/functions/CreatePackageZipFile",
+                "script_root_path_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/",
+                "script_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/bin/CreatePackageZipFile.dll",
+                "config_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/site/wwwroot/CreatePackageZipFile/function.json",
+                "test_data_href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/vfs/data/Functions/sampledata/CreatePackageZipFile.dat",
+                "href": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/admin/functions/CreatePackageZipFile",
                 "config": {},
-                "invoke_url_template": "https://dev-fa-optum-createpackagezipfile-haseeb.azurewebsites.net/api/createpackagezipfile",
+                "invoke_url_template": "https://dev-fa-optum-createpackagezipfile.azurewebsites.net/api/createpackagezipfile",
                 "language": "DotNetAssembly",
                 "isDisabled": false
             }
@@ -202,7 +220,7 @@
                 "[resourceId('Microsoft.Web/sites', parameters('sites_dev_fa_optum_createpackagezipfile_name'))]"
             ],
             "properties": {
-                "siteName": "dev-fa-optum-createpackagezipfile-haseeb",
+                "siteName": "dev-fa-optum-createpackagezipfile",
                 "hostNameType": "Verified"
             }
         }
