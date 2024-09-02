@@ -36,4 +36,4 @@ jobs:
         az functionapp deployment source config-zip \
           --name ${{ env.FUNCTION_APP_NAME }} \
           --resource-group ${{ env.RESOURCE_GROUP }} \
-          --src ./FunctionApps/Azure functions/wwwroot.zip
+          --src "./FunctionApps/Azure functions/wwwroot.zip"
