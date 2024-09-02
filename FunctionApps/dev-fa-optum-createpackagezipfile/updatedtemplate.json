@@ -115,7 +115,7 @@
                 "logsDirectorySizeLimit": 35,
                 "detailedErrorLoggingEnabled": false,
                 "publishingUsername": "$dev-fa-optum-createpackagezipfile",
-                "scmType": "ZipDeploy",
+                "scmType": "None",
                 "use32BitWorkerProcess": true,
                 "webSocketsEnabled": false,
                 "alwaysOn": false,
