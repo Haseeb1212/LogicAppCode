@@ -29,4 +29,5 @@ jobs:
           --resource-group ${{ env.RESOURCE_GROUP }} \
           --template-file FunctionApps/dev-fa-optum-createpackagezipfile/updatedtemplate.json \
           --parameters sites_dev_fa_optum_createpackagezipfile_name=${{ env.FUNCTION_APP_NAME }} \
-                      serverfarms_ASP_rgdevORxMSDynamicsRCM_9368_externalid=${{ secrets.APP_SERVICE_PLAN_ID }}
+                      serverfarms_ASP_rgdevORxMSDynamicsRCM_9368_externalid=${{ secrets.APP_SERVICE_PLAN_ID }} \
+          --mode Complete
