@@ -7,7 +7,7 @@ env:
   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   RESOURCE_GROUP: DynamicsDeployments-eastus
   LOCATION: Central US
-  FUNCTION_APP_NAME: FunctionApp-Final-Test
+  FUNCTION_APP_NAME: FunctionApp-Final
 
 jobs:
   deploy:
@@ -27,8 +27,13 @@ jobs:
         az deployment group create \
           --subscription ${{ env.AZURE_SUBSCRIPTION_ID }} \
           --resource-group ${{ env.RESOURCE_GROUP }} \
-          --name NewDeploymentName \
-          --template-file FunctionApps/dev-fa-optum-createpackagezipfile/updatedtemplate.json \
+          --template-file FunctionApps/dev-fa-optum-createpackagezipfile/template.json \
           --parameters sites_dev_fa_optum_createpackagezipfile_name=${{ env.FUNCTION_APP_NAME }} \
                       serverfarms_ASP_rgdevORxMSDynamicsRCM_9368_externalid=${{ secrets.APP_SERVICE_PLAN_ID }} \
-          --mode Complete
+          
+    - name: Deploy Function Code
+      run: |
+        az functionapp deployment source config-zip \
+          --name ${{ env.FUNCTION_APP_NAME }} \
+          --resource-group ${{ env.RESOURCE_GROUP }} \
+          --src ./FunctionApps/Azure functions/wwwroot.zip
