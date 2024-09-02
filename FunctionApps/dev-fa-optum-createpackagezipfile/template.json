@@ -53,7 +53,7 @@
                 "clientCertEnabled": false,
                 "clientCertMode": "Required",
                 "hostNamesDisabled": false,
-                "customDomainVerificationId": "6B839AC506D4E9BFB046E7716B027CD895C9A76B306EBC140041DF5072668B77",
+                "customDomainVerificationId": "F2B63D800D0E93BB2B3A4314BA947A22300311C0EFDECAD4F14C70431AA0BBF4",
                 "containerSize": 1536,
                 "dailyMemoryTimeQuota": 0,
                 "httpsOnly": true,
