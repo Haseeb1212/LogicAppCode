@@ -20,5 +20,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         resourceGroupName: 'DynamicsDeployments-eastus'
-        template: './RootFolder/LogicApps/OutboundWellskyToken/template.json'
-        parameters: './RootFolder/LogicApps/OutboundWellskyToken/parameters.json'
+        template: './KeyVaultTemplate/template.json'
+        parameters: './KeyVaultTemplate/parameters.json'
