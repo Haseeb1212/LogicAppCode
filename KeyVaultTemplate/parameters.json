@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vaults_dev_kv_d365keyvault_name": {
-            "value": null
+            "value": "dev-kv-haseeb"
         }
     }
 }
