@@ -41,6 +41,10 @@
     "resourceGroupName": {
       "defaultValue": "",
       "type": "String"
+    },
+    "keyVaultName": {
+      "defaultValue": "",
+      "type": "String"
     }
   },
   "variables": {},
@@ -152,6 +156,10 @@
               "type": "String"
             },
             "resourceGroupName": {
+              "defaultValue": "",
+              "type": "String"
+            },
+            "keyVaultName": {
               "defaultValue": "",
               "type": "String"
             }
@@ -1409,6 +1417,9 @@
           },
           "resourceGroupName": {
             "value": "[parameters('resourceGroupName')]"
+          },
+          "keyVaultName": {
+            "value": "[parameters('keyVaultName')]"
           }
         }
       }
