@@ -25,6 +25,10 @@
     "subscriptionId": {
       "defaultValue": "",
       "type": "String"
+    },
+    "keyVaultName": {
+      "defaultValue": "",
+      "type": "String"
     }
   },
   "variables": {},
@@ -40,9 +44,9 @@
             "id": "[concat('/subscriptions/',parameters('subscriptionId'),'/providers/Microsoft.Web/locations/centralus/managedApis/keyvault')]"
         },
         "parameterValueType": "Alternative",
-        "alternativeParameterValues": {
-                    "vaultName": "dev-kv-d365keyvault"
-                },
+      "alternativeParameterValues": {
+        "vaultName": "[parameters('keyVaultName')]"
+      },
         "displayName": "keyvault"
     }
 },
@@ -77,6 +81,10 @@
               "type": "String"
             },
             "subscriptionId": {
+              "defaultValue": "",
+              "type": "String"
+            },
+            "keyVaultName": {
               "defaultValue": "",
               "type": "String"
             }
