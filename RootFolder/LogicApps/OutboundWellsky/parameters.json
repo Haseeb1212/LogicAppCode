@@ -31,6 +31,9 @@
     },
     "resourceGroupName": {
       "value": "DynamicsDeployments-eastus"
+    },
+     "keyVaultName": {
+      "value": "dev-kv-d365keyvault"
     }
   }
 }
