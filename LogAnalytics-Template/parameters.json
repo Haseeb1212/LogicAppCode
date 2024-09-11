@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "workspaces_Optum_integration_loganalytics_workspace_name": {
-        "value": "Optum-integration-loganalytics-workspace-haseeb"
+        "value": "Optum-integration-loganalytics-workspace"
       }
     }
 }
